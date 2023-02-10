@@ -1,0 +1,99 @@
+    it('should click button accordingly', async () => {
+        //await HomePage.getTemperature();
+           await HomePage.open();
+           await HomePage.btnMoisturizers.click();
+           
+           itemPrices= HomePage.productsPrices;
+           await itemPrices.forEach( item_p => { item_p.getText();} )
+           itemNames= HomePage.productsNames;
+           await itemNames.forEach( item_n => { item_n.getText();} )
+        
+     });
+
+          // const aloemoist= await MoisturizerPage.productsAloe;
+        //   aloemoist.getText();
+
+        //   for (let i=0; i<len; i++){
+        //            const aloeMoist= await aloeNames[i].getText();
+        //            console.log(aloeMoist);
+        //            //await aloe.push(aloeMoist);
+        //         }
+
+
+         //onsole.log(aloe)
+
+
+    //      async sortPrices(){
+    //         const itemPrices= HomePage.productsPrices;
+    //         var arrayPrice=[]; // empty array
+ 
+    //         for (let i=0; i<6; i++){
+    //          const Price= await itemPrices[i].getText();
+    //          await arrayPrice.push(Price.slice(-3)) // fetch digits only
+    //         }
+    //         console.log("MOISTURIZERS PRICES: ", arrayPrice);
+    //         let result = arrayPrice.map(i=>Number(i)); // covert string yo int array
+    //         //console.log(result);
+ 
+    //         function sort(array){    // function for ascending sorting
+    //          for(let i=0; i<array.length;i++) {
+    //              for(let j=i+1;j<array.length;j++) {
+    //                  if (array[j]<array[i]){
+    //                      var min= array[i];  
+    //                      array[i]=array[j];
+    //                      array[j]=min;
+    //                     }
+    //              }
+    //          }
+    //          return array;
+    //          }
+ 
+    //         console.log("MOISTURIZERS PRICES AFTER SORTING: ", sort(result));
+    //  }
+
+          
+
+    // async sortNames(){
+    //     var aloeNames= [];
+    //     var almondNames=[];
+    //     aloeNames= this.productsAloe;
+    //     almondNames=this.productsAlmonds;
+    
+    //      let elementAloes = await aloeNames.map(el => el.getText());
+    //      let aloe = await Promise.all(elementAloes);
+    //      console.log(aloe)
+
+    //      let elementAlmonds = await almondNames.map(el => el.getText());
+    //      let almonds = await Promise.all(elementAlmonds);
+    //      console.log(almonds)
+    // }
+
+
+        // it('sorting prices', async () => {
+    //        await HomePage.open();
+    //        await HomePage.btnMoisturizers.click();
+    //        await MoisturizerPage.sortPrices();
+            
+    //  });
+//      it('Adding Moisturizers', async () => {
+//         await HomePage.open();
+//         await HomePage.btnMoisturizers.click();
+//         await MoisturizerPage.getDetailsAloe();
+//         await MoisturizerPage.getDetailsAlmonds();       
+//   });
+
+//   it('Adding Sunscreen', async () => {
+//     await HomePage.open();
+//     await HomePage.btnSunscreen.click();
+//     await SunscreenPage.getDetails_SPF30();
+      
+// });
+
+        //ENTERING INPUT IN CARD FIELD
+        await this.inputCardNumber.waitForExist({ timeout:5000, timeoutMsg: "Card NOT FOUND" })
+        await this.inputCardNumber.click();
+        for(let i=0; i<12; i++){
+           await browser.keys('\uE021');  //7
+          // await browser.keys('\uE021');
+           //await browser.keys ('\uE01D');
+        }
